@@ -1,21 +1,2 @@
-# esta config es para hacer que eureka funcione como server, mas no como client
-server:
-  port: ${CUSTOM.SERVER.PORT:9000} # definimos el puerto que va a utilizar el eureka server
-
-spring:
-  application:
-    name: config-server-01 # definimos el nombre que va a tener este servicio
-
-  cloud:
-    config:
-      server:
-        git:
-
-eureka:
-  client:
-    fetchRegistry: true #decimo que
-    registerWithEureka: true # define que sera un cliente para el discovery-eureka-server
-    serviceUrl: # definimos las urls de los demas servidores para hacer  las replicas de los servicios
-      defaultZone: ${EUREKA.SERVER.HOST:http://server-01.com:8761/eureka}   #por defecto busca un http://localhost:8761/eureka
-
-
+jcotrina:
+    environment: certification
